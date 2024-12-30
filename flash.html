@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trash Reminder Code Update</title>
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="TrashReminder.css">
+  <script src="https://tobiwern.github.io/TrashReminder_V3/TrashReminder.js">"></script> 
+</head>
+
+<body>
+  <div class="box">
+    <div class="row header"><img src='https://github.com/tobiwern/TrashReminder_V3/blob/main/pictures/TrashReminder.jpg?raw=true' alt='Trash Reminder' width='100%'></div>
+    <div class="row tabs">
+      <div class=tabbackground>
+        <button class="tablink" onclick="openPage('tab_CODE', this, '#4CAF50')" id="code"><img class=icon src=https://raw.githubusercontent.com/tobiwern/TrashReminder_V3/main/pictures/download_white.svg></button>
+      </div>
+    </div>
+    <div class="row content">
+      <div id="tab_CODE" class="tabcontent">
+        <div class=frame>
+          <h2><div class='centeredHeight'><img src='https://github.com/tobiwern/TrashReminder_V3/blob/main/pictures/download.svg?raw=true'> Code Update</div></h2>
+          <script type="module" src="https://unpkg.com/esp-web-tools/dist/web/install-button.js?module"></script>
+          <esp-web-install-button manifest="build/manifest.json">
+            <span slot="activate">
+              TrashReminder wird ständig weiterentwickelt!<br>
+              Sie können die neueste Version über den untenstehenden Button auf TrashReminder herunterladen.<br><br>
+              Bitte schließen Sie hierzu TrashReminder über ein <b>Daten-</b>USB-Kabel an und starten sie den Update.<br><br><i>(Das mitgelieferte USB Kabel ist nicht ausreichend und dient nur der Stromversorgung.
+                In den nachfolgenden Dialogen bitte <b>nicht</b> "Erase device" aktivieren, da sonst die Abholtermine also auch die Wifi-Einstellungen gelöscht werden und dann neu eingerichtet werden müssen.)<br></i><br>
+              <button class=button >Neuesten Code Herunterladen</button></span>
+            <span slot="unsupported">Dieser Browser wird leider nicht unterstützt. Unterstütze Browser sind Chrome, Edge und Opera auf Desktopgeräten!</span>
+            <span slot="not-allowed">Bitte benutzen sie eine HTTPS Verbindung!</span>
+          </esp-web-install-button>
+          <br><br>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script>document.getElementById("code").click();</script>
+</body>
+
+</html>

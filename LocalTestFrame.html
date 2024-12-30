@@ -1,0 +1,181 @@
+<html lang="de">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müll-Erinnerung</title>
+    <meta name="robots" content="noindex">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        text-align: center;
+          font-family: Arial, Helvetica, sans-serif;  
+      }
+    
+    /*Base Layout with Flex Box*/
+      .box {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        max-width: 500px;
+        margin: auto;
+        gap: 0px;
+      }
+
+      .box .row {
+        border: 0px dotted grey;
+      }
+
+      .box .row.header {
+        flex: 0 1 auto;
+        /* The above is shorthand for:
+        flex-grow: 0,
+        flex-shrink: 1,
+        flex-basis: auto
+        */
+        background-color: aqua;
+      }
+
+      .box .row.tabs {
+        flex: 0 1 60px;
+        background-color: rgb(0, 170, 255);
+      }
+
+      .box .row.content {
+        flex: 1 1 auto;
+        background-color: white;
+        overflow: scroll;
+      }
+
+      .box .row.footer {
+        flex: 0 1 20px;
+        background-color: #c8b08c;
+        margin:0px;
+        padding: 8px 10px 5px 10px;
+        line-height: 1;
+        font-size: 13px;
+        text-align: left;
+        align-items: center;
+        color: white;
+      }
+      /*Tab Layout*/
+      #tab1 {
+          background-color: white;
+        }
+
+        #tab2 {
+          background-color: white;
+        }
+
+        #tab3 {
+          background-color: white;
+        }
+
+        #tab4 {
+          background-color: white;
+        }
+        
+        /* Style tab links */
+        .tabbackground {
+          background-color: #a89477;
+          height: 60px;
+          margin:0px;
+        }
+
+        .tablink {
+          background-color: #c8b08c;
+          background: #c8b08c;
+          color: white;
+          float: left;
+          border-width: 1px 1px 10px 1px;
+          border-color: #c8b08c;
+          border-bottom-color: #edd1a582;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          vertical-align: text-bottom;
+          align-items: center;
+          text-align: center;
+          outline: none;
+          cursor: pointer;
+          padding: 2px 2px 2px 2px;
+          font-size: 17px;
+          width: 25%;
+          height: 60px;
+        }
+
+        .tablink:hover {
+          background-color: #a39073;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+          color: black;
+          display: none;
+          padding: 10px 10px;
+          height: 80%;
+          overflow: scroll;
+        }
+
+        .icon {
+          padding: 8px;
+        }
+
+      </style>
+</head>
+
+<body id='body' ">
+  <div class="box">
+    <div class="row header">
+      <img src='https://github.com/tobiwern/TrashReminder_V3/blob/main/pictures/TrashReminder.jpg?raw=true' alt='Trash Reminder' width='100%' >
+    </div>
+    <div class="row tabs">
+      <div class=tabbackground >
+        <button class="tablink" onclick="openPage('tab_DATES', this, '#4CAF50')" id="dates"><img class=icon src=https://raw.githubusercontent.com/tobiwern/TrashReminder_V3/main/pictures/truck_white.svg></button>
+        <button class="tablink" onclick="openPage('tab_SETTINGS', this, '#4CAF50')" id="settings"><img class=icon src=https://raw.githubusercontent.com/tobiwern/TrashReminder_V3/main/pictures/settings_white.svg></button>
+        <button class="tablink" onclick="openPage('tab_DATA', this, '#4CAF50')" id="data"><img class=icon src=https://raw.githubusercontent.com/tobiwern/TrashReminder_V3/main/pictures/download_white.svg></button>
+        <button class="tablink" onclick="openPage('tab_HELP', this, '#4CAF50')" id="help"><img class=icon src=https://raw.githubusercontent.com/tobiwern/TrashReminder_V3/main/pictures/help_white.svg></button>
+      </div>
+    </div>
+    <div class="row content">
+      <div id="tab_DATES" class="tabcontent">
+        <div class=frame>
+          <h2><div class='centeredHeight'><img src='https://github.com/tobiwern/TrashReminder_V3/blob/main/pictures/truck.svg?raw=true'>Abfuhrtermine</div></h2>
+          <div id='content_DATES'></div>
+        </div>
+      </div>
+  
+      <div id="tab_SETTINGS" class="tabcontent">
+        <div class=frame> 
+          <h2><div class='centeredHeight'><img src='https://github.com/tobiwern/TrashReminder_V3/blob/main/pictures/settings.svg?raw=true'> Einstellungen</div></h2>
+          <div id='content_SETTINGS'></div>    
+        </div>        
+      </div>
+  
+      <div id="tab_DATA" class="tabcontent">
+        <div class=frame>      
+          <h2><div class='centeredHeight'><img src='https://github.com/tobiwern/TrashReminder_V3/blob/main/pictures/download.svg?raw=true'> Daten für Abfuhrtermine</div></h2>
+          <div id='content_DATA'></div> 
+        </div>
+      </div>
+  
+      <div id="tab_HELP" class="tabcontent">
+        <div class=frame>
+          <h2><div class='centeredHeight'><img src='https://github.com/tobiwern/TrashReminder_V3/blob/main/pictures/github.svg?raw=true'> Bedienungsanleitung</div></h2>
+          <div id='content_HELP'></div> 
+        </div>
+      </div>   
+    </div>
+    <div class="row footer">
+      <div id="messageStatusBar">Status Bar Text</div>
+    </div>
+  </div>
+</body>
+
+</html>

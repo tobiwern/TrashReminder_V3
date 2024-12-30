@@ -1,0 +1,236 @@
+        .button {
+          background-color: #4CAF50;
+          /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          width: 350px;
+          margin: 2px 0px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          border-radius: 5px;
+        }
+
+        .button:hover:active {
+          background-color: #4caf4f87;
+          border: 1px solid #4caf4fb0;
+          color: white;
+        }
+
+        .button:hover {
+          background-color: #4caf4fb4;
+        }
+
+
+        table {
+          width: 80%;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        div.frame {
+          border: 2px solid #4CAF50;
+          border-radius: 8px;
+          padding: 5px;
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+
+        }
+
+        div.output {
+          width: 350px;
+          margin: auto;
+        }
+
+        div.centeredHeight {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2px;
+          gap: 6px;
+        }
+
+        div.taskTypeTbl {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          padding: 2px;
+          gap: 4px;
+        }
+
+        td.value {
+          white-space: nowrap;
+          vertical-align: center;
+          text-align: left;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+
+        td.description {
+          vertical-align: center;
+          text-align: right;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+        
+        input.inputWide,input.taskType_desc {
+          box-sizing: border-box;
+          width:100%;        
+        }
+
+        td.checkbox {
+          white-space: nowrap;
+          vertical-align: center;
+          text-align: right;
+          padding:0px;
+        }
+
+        #epochTasks {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        #epochTasks td,
+        #epochTasks th {
+          border: 1px solid #ddd;
+          padding: 4px;
+        }
+
+        #epochTasks tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+
+        #epochTasks tr:hover {
+          background-color: #ddd;
+        }
+
+        #epochTasks th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: center;
+          background-color: #4CAF50;
+          color: white;
+        }
+
+        hr {
+          border: 2px solid #4CAF50;
+          border-radius: 1px;
+        }
+
+        p {
+          font-style: italic;
+          text-align: center;
+        }
+
+        * {
+          box-sizing: border-box
+        }
+
+        html,
+        body {
+          height: 100%;
+          margin: 0;
+          text-align: center;
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: #a39073;        
+        }
+
+        /*Base Layout with Flex Box*/
+        .box {
+          display: flex;
+          flex-flow: column;
+          height: 100%;
+          max-width: 500px;
+          margin: auto;
+          gap: 0px;
+        }
+  
+        .box .row {
+          border: 0px dotted grey;
+        }
+  
+        .box .row.header {
+          flex: 0 1 auto;
+          /* The above is shorthand for:
+          flex-grow: 0,
+          flex-shrink: 1,
+          flex-basis: auto
+          */
+        }
+  
+        .box .row.tabs {
+          flex: 0 1 60px;
+        }
+  
+        .box .row.content {
+          flex: 1 1 auto;
+          overflow: scroll;
+          background-color: white;
+        }
+  
+        .box .row.footer {
+          flex: 0 1 0px;
+          background-color: #c8b08c;
+          margin:0px;
+          padding: 8px 10px 5px 10px;
+          line-height: 1;
+          font-size: 13px;
+          text-align: left;
+          align-items: center;
+          color: white;
+          display: none;
+        }
+
+        /*Tab Style*/          
+        .tabbackground {
+          background-color: #a89477;
+          height: 60px;
+          margin:0px;
+        }
+
+        .tablink {
+          background-color: #c8b08c;
+          background: #c8b08c;
+          color: white;
+          float: left;
+          border-width: 1px 1px 10px 1px;
+          border-color: #c8b08c;
+          border-bottom-color: #edd1a582;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          vertical-align: text-bottom;
+          align-items: center;
+          text-align: center;
+          outline: none;
+          cursor: pointer;
+          padding: 2px 2px 2px 2px;
+          font-size: 17px;
+          width: 25%;
+          height: 60px;
+        }
+
+        .tablink:hover {
+          background-color: #a39073;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+          color: black;
+          display: none;
+          padding: 10px 10px;
+          height: 100%;
+          overflow: scroll;
+        }
+  
+          .icon {
+            padding: 8px;
+          }
+
+        @keyframes blinker {  
+          50% { opacity: 0; }
+        }

@@ -1,0 +1,12 @@
+{
+  "name": "TrashReminder",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP8266",
+      "parts": [
+        { "path": "esp8266.esp8266.d1/TrashReminder_V3.ino.bin", "offset": 0 }
+      ]
+    }
+  ]
+}
