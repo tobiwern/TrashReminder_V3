@@ -602,12 +602,6 @@ function refreshTaskDates() { //show TaskDates on Webpage
   text += "</table>";
   document.getElementById("taskDates").innerHTML = text;
   document.getElementById("futureDates").innerHTML = gFutureDates + " Abfuhrtermine stehen noch an.<br><br>";
-/* TODO
-  <table>
-  <tr><td><input type='checkbox' id="showPastDates" onchange='handleShowPastDates()'><label for="showPastDates">Vergangene Termine anzeigen</label></td></tr>
-  </table><br>
-  </br>
-  */
 }
 
 /// ICS/iCAL Processing ////////////////////////////////////////////////////////////////////
@@ -1298,7 +1292,7 @@ function refreshTab_DATA(){
   var downloadButton = `
   Wähle eine oder mehrere bereits heruntergeladene ICS oder ICAL Dateien Deines Entsorgungsunternehmens aus:<br><br>
   <label class="button"><input style="display:none;" type="file" name="files" id="files" accept=".ics" onchange="processFiles()" multiple>Hochladen...</label>
-  <br>
+  <br><br>
   <input type='checkbox' id="importPastDates" onchange='handleImportPastDates()'>
   <label for="importPastDates">Vergangene Termine importieren</label>
 `;
